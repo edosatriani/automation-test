@@ -1,0 +1,29 @@
+{
+  "name": "automation",
+  "jest" : {
+    "reporters": [
+      "default",
+      ["./node_modules/jest-html-reporter", {
+          "pageTitle": "Test Report"
+      }]
+  ]
+  },
+  "version": "1.0.0",
+  "description": "Inside Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kurnia Hidayat",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "fs": "0.0.1-security",
+    "jest": "^24.8.0",
+    "mocha": "^6.1.4",
+    "selenium-webdriver": "^4.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "jest-html-reporter": "^2.5.0"
+  }
+}
