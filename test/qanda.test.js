@@ -111,7 +111,7 @@ describe('INSIDE Automation Test - Q & A Test', () => {
         var question = qanda.question
         var qestionNo = 1;
         
-        var needToRun = [0,1,2,3,4]
+        var needToRun = [0]
 
         for (const index of needToRun) {
             for (const msg of question){ 

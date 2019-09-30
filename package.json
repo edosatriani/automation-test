@@ -1,12 +1,15 @@
 {
   "name": "automation",
-  "jest" : {
+  "jest": {
     "reporters": [
       "default",
-      ["./node_modules/jest-html-reporter", {
+      [
+        "./node_modules/jest-html-reporter",
+        {
           "pageTitle": "Test Report"
-      }]
-  ]
+        }
+      ]
+    ]
   },
   "version": "1.0.0",
   "description": "Inside Test Automation",

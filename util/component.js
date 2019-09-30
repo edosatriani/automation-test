@@ -1,4 +1,7 @@
 module.exports = {
+    body: {
+        xpath: "//html//body"
+    },
     login: { 
         email: {
             id: 'email'
@@ -12,7 +15,8 @@ module.exports = {
         menuTop: {
             id: 'menuTop',
             mainMenu: {
-                id: 'mainMenuButton'
+                id: 'mainMenuButton',
+                xpath: "//div[@id='mainMenuButton']"
             },
             status: {
                 id: 'statusButton',

@@ -131,32 +131,41 @@ describe('INSIDE Automation Test - CC Masking Automation Test', () => {
                     action.delay(500);
 
                     it('Save Admin Settings', async () => {
-                        let returnVal = await action.settings.general.admin.saveSettings(page);
-                        action.delay(1000);
+                        let returnVal = await action.settings.general.admin.saveSettings(page, action);
+                        action.delay(500);
                         expect(returnVal).toEqual(component.newMenu.leftMenu.general.admin.saveConfirmButton.id)
                     }, 30000);
 
-                    action.delay(1000);
+                    action.delay(500);
+
+                    it('Clear overlay', async ()=> {
+                        let returnVal = await action.hitBody(page, action);
+                        action.delay(500);
+                        expect(returnVal).toEqual('1')
+                    }, 30000)
+
+                    action.delay(500);
 
                     it('Close Settings Menu', async () => {
                         driver.manage().window().maximize();
                         driver.executeScript('$("#stageBack").hide()');
-
                         action.delay(500);
 
-                        let returnEl = await action.topMenu.toggleSettings(page, false)
-                        if (returnEl.includes('display: block;')){
-                            returnEl = await action.topMenu.toggleSettings(page, true)
-                        } else{
-                            expect(returnEl).toContain('display: none;')
-                        }
+                        await action.topMenu.toggleSettingsExecute(driver);
+                        action.delay(2000);
+
+                        let returnEl = await action.topMenu.toggleSettings(page, true)
+                        action.delay(500)
+                        expect(returnEl).toContain('display: none;')
                         
                     }, 30000);
 
-                    action.delay(1000);
+                    action.delay(500);
 
                     it(`Change Operator avaliability status into ${params.status == 1 ? 'available':'not available'}`, async () => {
                         driver.manage().window().maximize();
+                        driver.executeScript('$("#stageBack").hide()');
+                        
                         action.delay(500);
                         let returnEl = await action.operator.availableForChat(page, params)
                         action.delay(1000);
@@ -171,7 +180,7 @@ describe('INSIDE Automation Test - CC Masking Automation Test', () => {
                         testChatMessage: sampleData
                     }
 
-                    visitorApp.sendChat(Page, vParams);
+                   // visitorApp.sendChat(Page, vParams);
 
                 })
             })
