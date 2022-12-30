@@ -23,7 +23,7 @@
     "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "jest": "^24.8.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "selenium-webdriver": "^4.0.0-alpha.4"
   },
   "devDependencies": {
